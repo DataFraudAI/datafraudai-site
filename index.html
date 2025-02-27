@@ -1,162 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>DataFraud AI</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #000;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    header nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    header nav ul li {
-      margin: 0 20px;
-    }
-    header nav ul li a {
-      color: #fff;
-      font-size: 16px;
-      text-transform: uppercase;
-      padding: 10px 15px;
-      transition: 0.3s;
-    }
-    header nav ul li a:hover {
-      background-color: #444;
-      border-radius: 5px;
-    }
-    #home {
-      background: url("https://via.placeholder.com/1200x500?text=AI+Fraud+Detection")
-        no-repeat center center/cover;
-      color: #333; /* Cor do texto alterada para garantir visibilidade */
-      text-align: center;
-      padding: 120px 20px;
-    }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-      background-color: #fff;
-    }
-    .content-box {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    #contact form {
-      max-width: 500px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      text-align: left;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    #contact form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-    #contact form input, #contact form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background: #f8f8f8;
-      color: #333;
-    }
-    #contact form button {
-      background-color: #000;
-      color: #fff;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    #contact form button:hover {
-      background-color: #444;
-    }
-    footer {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 15px 0;
-      font-size: 14px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="DataFraud AI - AI-powered fraud detection solutions for secure transactions." />
+    <meta name="author" content="DataFraud AI" />
+    <meta property="og:title" content="DataFraud AI" />
+    <meta property="og:description" content="AI-powered fraud detection solutions for secure transactions." />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=DataFraud+AI" />
+    <title>DataFraud AI</title>
+
+    <!-- Link to Google Fonts and FontAwesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #212121; /* Alterado para um fundo mais sóbrio */
+            color: #fff; /* Texto branco para contrastar com fundo escuro */
+            line-height: 1.6;
+            height: 100%;
+        }
+
+        /* Navbar */
+        header {
+            background: linear-gradient(135deg, #1c1c1c, #333); /* Gradiente mais escuro e sofisticado */
+            color: #fff;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        header nav ul li {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        header nav ul li a:hover {
+            background-color: #16a085;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+        #home {
+            background: url("https://via.placeholder.com/1600x800?text=AI+Fraud+Detection") no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 150px 20px;
+            background-size: cover;
+            position: relative;
+        }
+
+        #home h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #home p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #home button {
+            background-color: #16a085;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #home button:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #2c3e50; /* Cor de fundo escura e elegante */
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .content-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .services ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .services ul li {
+            background: #34495e; /* Fundo mais escuro */
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .services ul li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .services ul li h3 {
+            font-size: 1.8rem;
+            color: #16a085; /* Cor de texto do título em verde-água */
+            margin-bottom: 15px;
+        }
+
+        .services ul li p {
+            font-size: 1.1rem;
+            color: #bdc3c7; /* Texto cinza claro para contraste */
+        }
+
+        /* Contact Form */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #34495e; /* Cor de fundo mais sóbria */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        #contact form label {
+            display: block;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        #contact form input,
+        #contact form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #7f8c8d;
+            border-radius: 8px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-size: 1rem;
+        }
+
+        #contact form button {
+            background-color: #16a085;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact form button:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212121; /* Cor mais escura para o rodapé */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            #home h1 {
+                font-size: 3rem;
+            }
+
+            #home p {
+                font-size: 1.2rem;
+            }
+
+            .services ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section id="home">
-    <h1>AI Fraud Detection Solutions</h1>
-    <p class="content-box">Leveraging advanced AI to secure transactions and prevent fraudulent activities.</p>
-    <a href="#contact"><button>Contact Us</button></a>
-  </section>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p class="content-box">Our agency specializes in detecting fraudulent transactions using AI and machine learning techniques.</p>
-  </section>
+    <!-- Home Section -->
+    <section id="home">
+        <h1>AI Fraud Detection Solutions</h1>
+        <p>Harnessing the power of AI to protect your transactions and fight fraud in real time.</p>
+        <a href="#contact"><button>Contact Us</button></a>
+    </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="content-box">
-      <ul>
-        <li><h3>Real-Time Monitoring</h3></li>
-        <li><h3>Risk Assessment</h3></li>
-        <li><h3>Customized Solutions</h3></li>
-      </ul>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="content-box">
+            <p>We specialize in providing AI-powered fraud detection solutions that ensure the security of your transactions and business operations.</p>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form id="contact-form" action="https://formspree.io/f/mnnjkydq" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>
+                <h3>Real-Time Monitoring</h3>
+                <p>24/7 monitoring of transactions using AI to detect fraudulent activities instantly.</p>
+            </li>
+            <li>
+                <h3>Risk Assessment</h3>
+                <p>AI-based risk evaluation for each transaction to help identify potential fraud.</p>
+            </li>
+            <li>
+                <h3>Custom Solutions</h3>
+                <p>Tailored AI fraud detection solutions that meet the unique needs of your business.</p>
+            </li>
+        </ul>
+    </section>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form" action="https://formspree.io/f/mnnjkydq" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
 
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
 
-  <footer>
-    <p>&copy; 2025 DataFraud Ai. All rights reserved.</p>
-  </footer>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DataFraud AI. All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
 </body>
+
 </html>
+
