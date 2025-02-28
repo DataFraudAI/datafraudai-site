@@ -51,9 +51,9 @@
 
         /* Logo Styling */
         header img {
-            max-height: 50px;
+            max-height: 80px;
             width: auto;
-            margin-left: 20px;
+            display: block;
         }
 
         header nav ul {
@@ -82,6 +82,22 @@
             transform: translateY(-6px);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
         }
+
+	/* Centralizar a logo no header */
+header {
+    display: flex;          /* Usa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+    padding: 20px;          /* Adiciona espaçamento */
+}
+
+/* Ajustar o tamanho da logo */
+.logo {
+    max-height: 80px; /* Define um tamanho adequado */
+    width: auto;       /* Mantém a proporção correta */
+    display: block;    /* Evita espaçamentos desnecessários */
+}
+
 
         /* Hero Section */
         #home {
@@ -287,7 +303,7 @@
     <!-- Navbar -->
     <header>
         <!-- Logo -->
-        <img src="file:///C:/Users/rober/OneDrive/Ambiente%20de%20Trabalho/site/logo.png.png" alt="DataFraud AI Logo" />
+        <img src="file:///C:/Users/rober/OneDrive/Ambiente%20de%20Trabalho/site/logo.png.png" alt="DataFraud AI Logo" class="logo" />
 
         <nav>
             <ul>
@@ -369,5 +385,3 @@
 </body>
 
 </html>
-
-
